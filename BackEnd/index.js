@@ -23,6 +23,13 @@ app.listen(5000, ()=>{
 
 //END-POINTS
 
+app.post('/', (req, res)=>{
+    console.log(req.body)
+    estudiantes.push(req.body)
+    res.json(estudiantes);
+    res.end();
+})
+
 //toda callback funtion de express tiene estos dos parametros (REQuest, RESponds)
 app.get('/', (req, res)=>{
     res.end('<h1>Hello World</h1>');
